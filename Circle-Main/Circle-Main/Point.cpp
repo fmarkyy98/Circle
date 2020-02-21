@@ -1,3 +1,4 @@
+#include <iostream>
 #include "Point.h"
 
 double Point::getX() const
@@ -18,4 +19,10 @@ void Point::setX(double x)
 void Point::setY(double y)
 {
 	this->_y = y;
+}
+
+std::ostream& operator << (std::ostream& os, const Point& p)
+{
+	os << "(" << p._x << "," << p._y << ")";
+	return os;
 }
